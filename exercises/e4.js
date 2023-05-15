@@ -30,17 +30,6 @@ export const handlePromise = first()
   });
 
 
-
-
-// const secondPromise = handlePromise.then((val) => val);
-// const final = secondPromise.then((res) => second(res));
-// final.then((val) => {
-//   console.log(val);
-//   return(val);
-// });
-
-
-
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
 // If the test has all tests passed, switch to the next exercise file
