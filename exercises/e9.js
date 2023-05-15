@@ -13,7 +13,8 @@
 
 export function iterate(arg) {
   // Your code goes here...
-  
+  console.log(arg);
+  return arg + 1
 }
 
 /**
@@ -24,7 +25,7 @@ export function iterate(arg) {
 
 export function alwaysThrows() {
   // Your code goes here...
-
+  throw new Error('OH NOES')
 }
 
 /**
@@ -36,8 +37,9 @@ export function alwaysThrows() {
  * The function must be exported
  */
 
-export function onReject() {
+export function onReject(wayneBrady) {
   // Your code goes here...
+  wayneBrady.message ? console.log(wayneBrady.message) : console.log(wayneBrady)
 
 }
 
@@ -63,7 +65,20 @@ export function onReject() {
  */
 
 // Your code goes here...
-export const promise;
+export const promise = Promise
+  .resolve(iterate)
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then(() => alwaysThrows())
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .then((val) => iterate(val))
+  .catch((err) => onReject(err))
+  
+console.log(promise)
 
 
 

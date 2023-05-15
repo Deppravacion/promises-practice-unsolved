@@ -16,8 +16,20 @@
 
 // Your code goes here
 
+const executor = (resolve, _reject) => {
+  setTimeout(() => {
+    resolve(`The PROMISE was RESOLVED`)
+  }, 1000)
+}
 
 
+export const getPromise = new Promise(executor)
+
+getPromise
+  .then((res) => {
+    console.log(res);
+    return res
+  })
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
 // If the test has all tests passed, switch to the next exercise file

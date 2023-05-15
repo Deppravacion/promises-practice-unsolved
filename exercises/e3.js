@@ -14,8 +14,15 @@
  * * getPromise(num) function must be exported
  * Example: export const getPromise(num) => return <Your code of promise>
 */ 
-export const getPromise = () => {
+export const getPromise = (arg) => {
   // Your code goes here...
+  if (arg % 1 == 0 ) {
+    return new Promise((resolve, _reject) => {
+      resolve(arg)
+    })
+  } else {
+    return 0
+  }
 
 };
 
@@ -29,13 +36,16 @@ export const getPromise = () => {
  * * Takes no arguments
  * * Has a local variable with name of 'sum' and value of 2
  * * resolves the getPromise function with an argument of 120, then adds the promise value to the sum variable
- * * Synchronously adds 8 to the sum variable
+ * * Synchronously adds 8 to the sum variable 
  * * Returns the sum value
  * * if you have solved it successfully, the updateSumValue() function will return the value of 10;
 */
 export const  updateSumValue = () => {
-  // Your code goes here...
-  
+  let sum = 2
+  getPromise(120)
+    .then((radstuff) => (sum += radstuff))
+  sum += 8 
+  return sum
 }
 
 
